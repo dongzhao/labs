@@ -1,4 +1,4 @@
 .gradle/
 .idea/
 build/
-first-gradle-selenium.iml
+*.iml
