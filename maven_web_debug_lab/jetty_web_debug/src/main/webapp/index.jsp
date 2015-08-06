@@ -11,9 +11,9 @@
 </head>
 <body>
 <h1>Hello Page</h1>
-<form action="sorting" method="GET">
-  <p>Enter Sorting Numbers: <input type="text" name="numbers" size="20"/></p>
-  <input type="submit" value="Bubble Sort"/>
+<form action="greeting" method="GET">
+  <p>Enter your name: <input type="text" name="username" size="20"/></p>
+  <input type="submit" value="Greeting"/>
 </form>
 </body>
 </html>

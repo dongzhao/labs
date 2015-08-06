@@ -52,7 +52,7 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+<!--            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>selenium-maven-plugin</artifactId>
                 <version>2.3</version>
@@ -67,7 +67,56 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
+
+<!--            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+&lt;!&ndash;                    <systemProperties>
+                        <JAVA_OPTS>-Xmx1024m -Xms256m -XX:MaxPermSize=256m -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=9999</JAVA_OPTS>
+                    </systemProperties>&ndash;&gt;
+&lt;!&ndash;                    <webapps>
+                        <webapp>
+                            <contextPath>/selenium-test-web</contextPath>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                        </webapp>
+                    </webapps>&ndash;&gt;
+                </configuration>
+                <dependencies>
+&lt;!&ndash;                    <dependency>
+                        <groupId>javax.servlet.jsp</groupId>
+                        <artifactId>jsp-api</artifactId>
+                        <version>2.1</version>
+                    </dependency>&ndash;&gt;
+                    <dependency>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                        <version>${servlet.version}</version>
+                    </dependency>
+                </dependencies>
+&lt;!&ndash;                <executions>
+                    <execution>
+                        <id>run-tomcat</id>
+                        <goals><goal>run-war-only</goal></goals>
+                        <configuration>
+                            <webapps>
+                                <webapp>
+                                    <contextPath>/selenium-test-web</contextPath>
+                                    <type>war</type>
+                                    <asWebapp>true</asWebapp>
+                                </webapp>
+                            </webapps>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>tomcat-shutdown</id>
+                        <goals><goal>shutdown</goal></goals>
+                    </execution>
+                </executions>&ndash;&gt;
+            </plugin>-->
 
             <!-- jetty plugin with web app -->
             <plugin>
@@ -83,7 +132,7 @@
                     </webApp>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>38080</port>
+                            <port>8090</port>
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
@@ -107,6 +156,7 @@
                     </dependency>
 
                 </dependencies>
+<!--
                 <executions>
                     <execution>
                         <id>start-jetty</id>
@@ -127,6 +177,7 @@
                         </goals>
                     </execution>
                 </executions>
+-->
             </plugin>
         </plugins>
     </build>
